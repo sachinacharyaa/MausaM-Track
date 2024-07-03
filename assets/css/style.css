@@ -1,0 +1,228 @@
+:root {
+    --primary-color: #378eec; /* Deep blue */
+    --secondary-color: #E74C3C; /* Coral */
+    --background-color: #ECF0F1; /* Light grey */
+    --text-color: #2C3E50; /* Deep blue */
+    --highlight-color: #000000; /* Gold */
+}
+
+html {
+    position: relative;    
+}
+html, body {
+    min-height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.15;
+    overflow-x: hidden;
+}
+
+body.active { overflow: hidden; }
+
+:focus-visible { outline-offset: 4px; }
+
+::-webkit-scrollbar { width: 5px; }
+
+::-webkit-scrollbar-track { background-color: var(--background-color); }
+
+::-webkit-scrollbar-thumb { background-color: var(--text-color); }
+
+.container {
+    padding-bottom: 80px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h2 a {
+    transition: 0.1s;
+}
+h2 a:hover {
+    color: var(--highlight-color) !important;
+}
+
+.section-title {
+    margin-top: 50px;
+}
+
+.section-title h1 {
+    font-size: 50px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+}
+
+.section-description {
+    margin-top: 50px;
+    padding: 0 10px;
+}
+
+#geolocation {
+    margin-right: 11px;
+}
+#geolocation i {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+    font-size: 35px;
+    color: #aaa;
+}
+#geolocation:hover i {
+    color: #fff;
+}
+
+/* Weather */
+#meteo-title {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--primary-color);
+}
+.text-muted {
+    color: var(--primary-color) !important;
+}
+
+.section-meteo {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.meteo-day {
+    background-color: var(--primary-color);
+    margin: 5px;
+    padding: 10px 25px;
+    min-height: 200px;
+    flex: 1 1 calc(33.333% - 10px);
+    border-radius: 5px;
+    border: 1px solid #eee;
+    border-bottom: 3px solid #ddd;
+    transition: 0.3s;
+    box-shadow: 0px 5px 5px rgba(31, 31, 31, 0.05);
+}
+.meteo-day:hover {
+    background-color: darken(var(--primary-color), 5%);
+    box-shadow: 0px 5px 5px rgba(33, 87, 95, 0.15);
+}
+.meteo-day h3 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.meteo-block {
+    margin: 5px 5px;
+    text-align: center;
+    height: 73px;
+}
+
+.meteo-block-title {
+    font-size: 14px !important;
+    color: var(--background-color);
+}
+
+.meteo-block-data {
+    margin-top: 8px;
+    font-size: 18px;
+    color: var(--highlight-color);
+}
+
+.meteo-temperature-container {
+    padding-top: 5px;
+    height: 100px;
+}
+.meteo-temperature {
+    margin: 0 auto;
+    font-size: 55px;
+    color: var(--highlight-color);
+}
+
+.meteo-temperature .wi {
+    color: rgba(54, 50, 50, 0.6);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0 0 0;
+}
+footer a {
+    text-decoration: none;
+    color: #FFF;
+}
+footer a:hover {
+    color: var(--secondary-color);
+}
+footer ul {
+    margin-top: 10px;
+    text-align: center;
+}
+footer li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.copyright {
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: var(--background-color);
+}
+
+/* Loading */
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    display: none;
+    position: relative;    
+    width: 20px !important;
+    height: 20px !important;
+    transform: translate(-50px, -50px) scale(1) translate(50px, 50px);
+}
+
+.loading div {
+    position: absolute;
+    animation: loading 1s linear infinite;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 2px 0 0 #ffffff;
+    transform-origin: 10px 11px;
+}
+
+.inload {
+    display: inline-block !important;
+}
+
+#search-loading {
+    margin-right: 15px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1100px) {
+    .meteo-day {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .meteo-day {
+        flex: 1 1 100%;
+    }
+}
