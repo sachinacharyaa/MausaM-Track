@@ -1,4 +1,6 @@
-# Mausam=Weather
+#Mausam Track (Weather Track) is a web application that provides 
+users with real-time weather information. Built using HTML, CSS, and
+JavaScript, it offers an intuitive and interactive user experience.
 
 A web application dedicated to displaying OpenWeatherMap weather forecasts.
 
